@@ -72,13 +72,7 @@ cmp.setup({
     },
     mapping = cmp.mapping.preset.insert({
         -- Enter key confirms completion item
-        ["<Tab>"] = cmp.mapping(
-        cmp.mapping.confirm({
-            behavior = cmp.ConfirmBehavior.Replace,
-            select = true,
-        }),
-        { "i", "c" }
-        ),
+        ['<Tab>'] = cmp.mapping(cmp.mapping.confirm({behavior = cmp.ConfirmBehavior.Replace, select = true}), {'i'}),
 
         -- Ctrl + space triggers completion menu
         ['<C-Space>'] = cmp.mapping.complete(),
