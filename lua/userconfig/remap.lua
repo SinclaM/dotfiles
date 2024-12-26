@@ -26,3 +26,43 @@ vim.opt.updatetime = 50
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+vim.keymap.set("n", "H", "gT");
+vim.keymap.set("n", "L", "gt");
+
+
+pcall(function()
+    vim.keymap.del({ "t", "v", "i" }, "<C-b>")
+end)
+
+vim.keymap.set("t", "<C-b>[", [[<C-\><C-n>]])
+
+vim.keymap.set({ "n", "v" }, "<C-b>c",   ":tabnew | execute 'terminal' | startinsert<CR>")
+vim.keymap.set({ "n", "v" }, "<C-b>%",   ":vert new | execute 'terminal' | startinsert<CR>")
+vim.keymap.set({ "n", "v" }, [[<C-b>"]], ":new | execute 'terminal' | startinsert<CR>")
+vim.keymap.set("i",          "<C-b>c",   [[<C-\><C-n>:tabnew | execute 'terminal' | startinsert<CR>]])
+vim.keymap.set("i",          "<C-b>%",   [[<C-\><C-n>:vert new | execute 'terminal' | startinsert<CR>]])
+vim.keymap.set("i",          [[<C-b>"]], [[<C-\><C-n>:new | execute 'terminal' | startinsert<CR>]])
+
+vim.keymap.set({ "n", "v" }, "<C-b>0", "1gt");
+vim.keymap.set({ "n", "v" }, "<C-b>1", "2gt");
+vim.keymap.set({ "n", "v" }, "<C-b>2", "3gt");
+vim.keymap.set({ "n", "v" }, "<C-b>3", "4gt");
+vim.keymap.set({ "n", "v" }, "<C-b>4", "5gt");
+vim.keymap.set({ "n", "v" }, "<C-b>5", "6gt");
+vim.keymap.set({ "n", "v" }, "<C-b>6", "7gt");
+vim.keymap.set({ "n", "v" }, "<C-b>7", "8gt");
+vim.keymap.set({ "n", "v" }, "<C-b>8", "9gt");
+vim.keymap.set({ "n", "v" }, "<C-b>9", "10gt");
+
+vim.keymap.set("t", "<C-b>0", [[<C-\><C-n>1gt]]);
+vim.keymap.set("t", "<C-b>1", [[<C-\><C-n>2gt]]);
+vim.keymap.set("t", "<C-b>2", [[<C-\><C-n>3gt]]);
+vim.keymap.set("t", "<C-b>3", [[<C-\><C-n>4gt]]);
+vim.keymap.set("t", "<C-b>4", [[<C-\><C-n>5gt]]);
+vim.keymap.set("t", "<C-b>5", [[<C-\><C-n>6gt]]);
+vim.keymap.set("t", "<C-b>6", [[<C-\><C-n>7gt]]);
+vim.keymap.set("t", "<C-b>7", [[<C-\><C-n>8gt]]);
+vim.keymap.set("t", "<C-b>8", [[<C-\><C-n>9gt]]);
+vim.keymap.set("t", "<C-b>9", [[<C-\><C-n>10gt]]);
+

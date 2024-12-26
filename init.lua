@@ -29,6 +29,21 @@ require("gruvbox").setup({
 vim.o.background = "dark" -- or "light" for light mode
 vim.cmd([[colorscheme gruvbox]])
 
+vim.o.shell = '"C:/PROGRA~1/Git/usr/bin/bash.exe"'
+vim.o.shellcmdflag = "-s"
+
+vim.opt.termguicolors = true
+
+require('bufferline').setup({
+    options = {
+        mode = "tabs", -- set to "tabs" to only show tabpages instead
+        separator_style = "slant",
+        numbers = function(obj)
+            return obj.ordinal - 1;
+        end,
+    }
+})
+
 vim.api.nvim_create_autocmd('LspAttach', {
     desc = 'LSP actions',
     callback = function(event)
@@ -83,3 +98,12 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 vim.opt.clipboard = "unnamedplus"
+
+vim.opt.guicursor:append("a:blinkon0")
+
+vim.api.nvim_create_autocmd("TermClose", {
+    callback = function()
+       vim.cmd("q")
+    end
+})
+
