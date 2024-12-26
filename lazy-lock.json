@@ -8,5 +8,6 @@
   "nvim-lspconfig": { "branch": "master", "commit": "056f569f71e4b726323b799b9cfacc53653bceb3" },
   "nvim-treesitter": { "branch": "master", "commit": "7821feb7e7d55a76b7ffeeb6b0bfb7b8f499ce94" },
   "plenary.nvim": { "branch": "master", "commit": "2d9b06177a975543726ce5c73fca176cedbffe9d" },
-  "telescope.nvim": { "branch": "master", "commit": "a0bbec21143c7bc5f8bb02e0005fa0b982edc026" }
+  "telescope.nvim": { "branch": "master", "commit": "a0bbec21143c7bc5f8bb02e0005fa0b982edc026" },
+  "vim-matchit": { "branch": "master", "commit": "f52e59b05a937fe3102d431dd23f8ae4d8752ba3" }
 }
