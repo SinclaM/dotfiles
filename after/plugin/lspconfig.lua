@@ -3,7 +3,7 @@ local configs = require('lspconfig.configs')
 local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 lspconfig.clangd.setup({
-    cmd = { "clangd", "-header-insertion=never" }
+    cmd = { "clangd", "-log=verbose", "-header-insertion=never" }
 })
 
 lspconfig.lua_ls.setup({
