@@ -6,11 +6,16 @@ local project_files = function()
     if ret == 0 then
         builtin.git_files()
     else
-        builtin.find_files()
+        builtin.find_files({
+            find_command = { 'rg', '--files', '--no-ignore', '--hidden' }
+        })
     end
 end
 
-vim.keymap.set("n", "<leader>pa", builtin.find_files, {})
+vim.keymap.set("n", "<leader>pa", function()
+    builtin.find_files({ find_command = { 'rg', '--files', '--no-ignore', '--hidden' } })
+end, {})
+
 vim.keymap.set("n", "<C-p>", project_files, {})
 vim.keymap.set("n", "<C-g>", function ()
     builtin.grep_string({
