@@ -29,8 +29,7 @@ require("gruvbox").setup({
 vim.o.background = "dark" -- or "light" for light mode
 vim.cmd([[colorscheme gruvbox]])
 
-vim.o.shell = '"C:/PROGRA~1/Git/usr/bin/bash.exe"'
-vim.o.shellcmdflag = "-s"
+vim.o.shell = "/bin/bash"
 
 vim.opt.termguicolors = true
 
