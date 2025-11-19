@@ -36,7 +36,7 @@ vim.opt.termguicolors = true
 require('bufferline').setup({
     options = {
         mode = "tabs", -- set to "tabs" to only show tabpages instead
-        separator_style = "slant",
+        separator_style = "thin",
         numbers = function(obj)
             return obj.ordinal - 1;
         end,
