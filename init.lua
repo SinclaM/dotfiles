@@ -100,9 +100,30 @@ vim.opt.clipboard = "unnamedplus"
 
 vim.opt.guicursor:append("a:blinkon0")
 
-vim.api.nvim_create_autocmd("TermClose", {
-    callback = function()
-       vim.cmd("q")
-    end
-})
+vim.opt.mouse = ""
+
+-- vim.api.nvim_create_autocmd("TermClose", {
+--     callback = function()
+--        vim.cmd("q")
+--     end
+-- })
+
+vim.wo.wrap = false
+
+-- This is slow...
+vim.cmd([[
+set clipboard+=unnamedplus
+let g:clipboard = {
+          \   'name': 'win32yank-wsl',
+          \   'copy': {
+          \      '+': 'win32yank.exe -i --crlf',
+          \      '*': 'win32yank.exe -i --crlf',
+          \    },
+          \   'paste': {
+          \      '+': 'win32yank.exe -o --lf',
+          \      '*': 'win32yank.exe -o --lf',
+          \   },
+          \   'cache_enabled': 0,
+          \ }
+]])
 
