@@ -36,3 +36,18 @@ if not configs.shader_language_server then
     }
 end
 lspconfig.shader_language_server.setup({})
+
+lspconfig.pyright.setup({
+    on_attach = on_attach,
+    settings = {
+        pyright = { autoImportCompletion = true, },
+        python = {
+            analysis = {
+                autoSearchPaths = false,
+                diagnosticMode = "openFilesOnly",
+                useLibraryCodeForTypes = true,
+                typeCheckingMode = "standard"
+            }
+        }
+    }
+})
